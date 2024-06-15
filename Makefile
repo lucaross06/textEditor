@@ -1,2 +1,2 @@
-run:	editor.c
-	$(CC)	editor.c -o run -Wall -Wextra -pedantic -std=c99
+editor:	editor.c
+	$(CC)	editor.c -o editor -Wall -Wextra -pedantic -std=c99
