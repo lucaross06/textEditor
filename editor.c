@@ -23,7 +23,9 @@ void enableRawMode(){
 	raw.c_iflag &= ~(BRKINT | IXON | ICRNL | ISTRIP | INPCK);
 	raw.c_lflag &= ~(ECHO | ICANON | ISIG | IEXTEN); //~ e'  bitwise not, &= e' bitwise and
 	raw.c_cflag |= (CS8); //bitwise or
-	tcsetattr(STDIN_FILENO,TCSAFLUSH,&raw);
+/*	raw.c_cc[VMIN] = 0;
+	raw.c_cc[VTIME] = 1;
+*/	tcsetattr(STDIN_FILENO,TCSAFLUSH,&raw);
 }
 
 int main(){
